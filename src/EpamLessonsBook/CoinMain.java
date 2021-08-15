@@ -7,8 +7,8 @@ public class CoinMain {
         first.setWeight(-15.0);
 
         Coin second = new Coin();
-        second.setDiametr(-50);
-        second.setWeight(10);
+        second.setDiametr(-50.0);
+        second.setWeight(10.0);
 
         CompareCoin compareCoin = new CompareCoin();
         compareCoin.compareDiametr(first, second);
