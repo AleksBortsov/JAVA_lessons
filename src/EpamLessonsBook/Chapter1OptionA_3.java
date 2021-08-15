@@ -5,6 +5,7 @@ import java.util.Scanner;
 public class Chapter1OptionA_3 {
 
     public static void main(String[] args) {
+
         System.out.println("Insert number in new line: ");
         Scanner scannerNumbers = new Scanner(System.in);
         Integer numbers = scannerNumbers.nextInt();
