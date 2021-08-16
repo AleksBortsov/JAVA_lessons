@@ -1,15 +1,10 @@
 package EpamLessonsBook;
 
-import java.text.DateFormat;
-import java.text.ParseException;
-import java.text.SimpleDateFormat;
-import java.time.format.DateTimeFormatter;
-import java.util.Date;
 import java.util.Scanner;
 
 public class Chapter1OptionA_6 {
 
-    public static void main(String[] args) throws ParseException {
+    public static void main(String[] args)  {
 
         System.out.println("Insert developer`s last name: ");
         Scanner nameScanner = new Scanner(System.in);
