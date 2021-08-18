@@ -2,16 +2,20 @@ package EpamLessonsBook;
 
 import java.util.Scanner;
 
-public class Chapter1OptionB_1 {
+public class Chapter1OptionB_1_1 {
 
     public static void main(String[] args) {
-
+        int array[];
+        System.out.println("Insert 10 integer numbers: ");
         Scanner scanner = new Scanner(System.in);
-
-        System.out.print("Insert 10 integer numbers: ");
+        for (int i = 1; i <= 10; i++) {
+            System.out.println("Insert number: " + i);
+            array = new int[i];
+            scanner.nextInt();
+            System.out.println("Length of array: " + array.length);
+        }
 
         Integer numbers = scanner.nextInt();
-
         System.out.print("Out pared numbers: ");
         for (int i = 1; i <= numbers; i++) {
             if (i % 2 == 0)
@@ -23,13 +27,5 @@ public class Chapter1OptionB_1 {
             if (i % 2 != 0)
                 System.out.print(i + ", ");
         }
-        System.out.println();
-        System.out.println("Maximum number: ");
-        for (int i = 1; i <= numbers; i++) {
-        }
-        System.out.println(Math.max(numbers, 0));
-        System.out.println("Minimum number: ");
-        System.out.println(Math.min(numbers, 0));
     }
 }
-
