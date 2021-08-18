@@ -7,7 +7,6 @@ public class Chapter1OptionB_1 {
     public static void main(String[] args) {
 
         Scanner scanner = new Scanner(System.in);
-
         System.out.print("Insert 10 integer numbers: ");
 
         Integer numbers = scanner.nextInt();
@@ -25,8 +24,6 @@ public class Chapter1OptionB_1 {
         }
         System.out.println();
         System.out.println("Maximum number: ");
-        for (int i = 1; i <= numbers; i++) {
-        }
         System.out.println(Math.max(numbers, 0));
         System.out.println("Minimum number: ");
         System.out.println(Math.min(numbers, 0));
