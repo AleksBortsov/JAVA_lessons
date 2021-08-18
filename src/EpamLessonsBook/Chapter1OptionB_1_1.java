@@ -24,17 +24,60 @@ public class Chapter1OptionB_1_1 {
     }
 
     private void paresNumbers() {
-        Integer numbers = scanner.nextInt();
         System.out.print("Out Pared numbers: ");
         int k = array.length;
         for (int i = 0; i < k; i++)
-            if (array[numbers] % 2 == 0)
-                System.out.print(numbers + ", ");
+            if (array[i] % 2 == 0) {
+                System.out.print(array[i] + ", ");
+            }
+    }
+
+    private void unParedNumbers() {
+        System.out.println();
+        System.out.print("Out UnPared numbers: ");
+        int k = array.length;
+        for (int i = 0; i < k; i++)
+            if (array[i] % 2 != 0) {
+                System.out.print(array[i] + ", ");
+            }
+    }
+
+//    private void maxNum() {
+//        System.out.print("Out Max number: ");
+//        int k = array.length;
+//        for (int i = 0; i < k; i++)
+//            if (array[i] % 2 != 0) {
+//                System.out.print(array[i] + ", ");
+//            }
+//    }
+
+    private void numDevision3or9() {
+        System.out.println();
+        System.out.print("Out numDevision3or9 numbers: ");
+        int k = array.length;
+        for (int i = 0; i < k; i++)
+            if (array[i] % 3==0 | array[i] %9 == 0) {
+                System.out.print(array[i] + ", ");
+            }
+    }
+
+    private void numDevision5and7() {
+        System.out.println();
+        System.out.print("Out numDevision5and7 numbers: ");
+        int k = array.length;
+        for (int i = 0; i < k; i++)
+            if (array[i] % 5==0 && array[i] %7 == 0) {
+                System.out.print(array[i] + ", ");
+            }
     }
 
     public static void main(String[] args) {
-        Chapter1OptionB_1_1 pares = new Chapter1OptionB_1_1();
-        pares.insertNumbers();
-       // pares.paresNumbers();
+        Chapter1OptionB_1_1 numbers = new Chapter1OptionB_1_1();
+        numbers.insertNumbers();
+        numbers.paresNumbers();
+        numbers.unParedNumbers();
+        numbers.numDevision3or9();
+        numbers.numDevision5and7();
+
     }
 }
