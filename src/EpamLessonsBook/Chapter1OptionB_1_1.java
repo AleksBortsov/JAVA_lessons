@@ -86,18 +86,17 @@ public class Chapter1OptionB_1_1 {
             }
     }
 
-    protected void threeDigitNumbers() {
+    protected void threeDigitNumbers() throws ArrayIndexOutOfBoundsException {
         System.out.println();
         System.out.print("Out threeDigitNumbers: ");
         int k = array.length;
-        for (int i = 0; i <= k; i++) {
-            for (int a = 100; a < 1000; a++) {
-                int num1 = array[i] / 100;
-                int num2 = (a - (num1 * 100)) / 10;
-                int num3 = (a - (num1 * 100) - (num2 * 10));
-                if (num1 != num2 && num1 != num3 && num2 != num3) {
-                    System.out.println(a);
-                }
+        for (int i = 0; i < k; i++) {
+            if (array[i] >= 100 & array[i] < 1000
+                    || array[i] <= -100 & array[i] > -1000) {
+                System.out.print(array[i] + ", ");
+            } else {
+                System.out.println();
+                System.out.print("Out not threeDigitNumbers: " + array[i] + ", ");
             }
         }
     }
@@ -110,8 +109,8 @@ public class Chapter1OptionB_1_1 {
         numbers.unParedNumbers();
         numbers.numDevision3or9();
         numbers.numDevision5and7();
-        //numbers.threeDigitNumbers();
         numbers.maxNum();
         numbers.minNum();
+        numbers.threeDigitNumbers();
     }
 }
