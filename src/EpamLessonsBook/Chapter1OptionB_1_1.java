@@ -86,21 +86,18 @@ public class Chapter1OptionB_1_1 {
             }
     }
 
-    protected void threeDigitNumbers() throws ArrayIndexOutOfBoundsException {
+    protected void threeDigitNumbers() {
         System.out.println();
-        System.out.print("Out threeDigitNumbers: ");
         int k = array.length;
         for (int i = 0; i < k; i++) {
-            if (array[i] >= 100 & array[i] < 1000
-                    || array[i] <= -100 & array[i] > -1000) {
-                System.out.print(array[i] + ", ");
+            if (array[i] >= 100 && array[i] < 1000
+                    || array[i] <= -100 && array[i] > -1000) {
+                System.out.println("Out threeDigitNumbers: " + array[i] + ", ");
             } else {
-                System.out.println();
-                System.out.print("Out not threeDigitNumbers: " + array[i] + ", ");
+                System.out.println("Out not threeDigitNumbers: " + array[i] + ", ");
             }
         }
     }
-
 
     public static void main(String[] args) {
         Chapter1OptionB_1_1 numbers = new Chapter1OptionB_1_1();
