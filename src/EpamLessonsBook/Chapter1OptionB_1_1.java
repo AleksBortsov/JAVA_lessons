@@ -89,10 +89,16 @@ public class Chapter1OptionB_1_1 {
     protected void threeDigitNumbers() {
         System.out.println();
         int k = array.length;
+        Integer b;
         for (int i = 0; i < k; i++) {
             if (array[i] >= 100 && array[i] < 1000
                     || array[i] <= -100 && array[i] > -1000) {
-                System.out.println("Out threeDigitNumbers: " + array[i] + ", ");
+                if (       array[i] / 100 != array[i] / 10 % 10
+                        && array[i] % 10 != array[i] / 100
+                        && array[i] / 10 % 10 != array[i] % 10) {
+                    System.out.println("Out threeDigitNumbers: " + array[i] + ", ");
+                }
+//
             } else {
                 System.out.println("Out not threeDigitNumbers: " + array[i] + ", ");
             }
@@ -109,5 +115,10 @@ public class Chapter1OptionB_1_1 {
         numbers.maxNum();
         numbers.minNum();
         numbers.threeDigitNumbers();
+//        int a = 123;
+//        System.out.println(a / 100 + ", ");
+//        System.out.println(a / 10 % 10 + ", ");
+//        System.out.println(a % 10 + ", ");
+
     }
 }
