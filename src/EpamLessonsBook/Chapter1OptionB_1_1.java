@@ -89,21 +89,45 @@ public class Chapter1OptionB_1_1 {
     protected void threeDigitNumbers() {
         System.out.println();
         int k = array.length;
-        Integer b;
         for (int i = 0; i < k; i++) {
             if (array[i] >= 100 && array[i] < 1000
                     || array[i] <= -100 && array[i] > -1000) {
-                if (       array[i] / 100 != array[i] / 10 % 10
+                if (array[i] / 100 != array[i] / 10 % 10
                         && array[i] % 10 != array[i] / 100
                         && array[i] / 10 % 10 != array[i] % 10) {
                     System.out.println("Out threeDigitNumbers: " + array[i] + ", ");
                 }
-//
             } else {
                 System.out.println("Out not threeDigitNumbers: " + array[i] + ", ");
             }
         }
     }
+
+    private void primeNumbers() {
+        System.out.println();
+        int k = array.length;
+        int max = array[0];
+        for (int i = 0; i < k; i++) {
+            if (array[i] > 1) {
+                if (array[i] > max) {
+                    max = array[i];
+                }
+                for (int m = max; m > 1; m--) {
+                    if (array[i] / m == 1) {
+                        //inlet data array[i]
+                    }
+                    for (int g = array[i] - 1; g > 2; g--) {
+                        if (array[i] % g == 0) {
+                            System.out.println("Out NOT prime number: " + array[i]);
+                        }
+                    }
+
+                }
+            }
+            //System.out.println("Prime num: " + array[i]);
+        }
+    }
+
 
     public static void main(String[] args) {
         Chapter1OptionB_1_1 numbers = new Chapter1OptionB_1_1();
@@ -115,10 +139,14 @@ public class Chapter1OptionB_1_1 {
         numbers.maxNum();
         numbers.minNum();
         numbers.threeDigitNumbers();
-//        int a = 123;
-//        System.out.println(a / 100 + ", ");
-//        System.out.println(a / 10 % 10 + ", ");
-//        System.out.println(a % 10 + ", ");
-
+        numbers.primeNumbers();
+//        int a = 123 / 100;
+//        int b = 123 / 10 % 10;
+//        int c = 123 % 10;
+//        int d = 123;
+//        System.out.println(a + ", " + b + ", " + c);
+//        if (d / 123 == 1) {
+//            System.out.println(d);
+//        }
     }
 }
