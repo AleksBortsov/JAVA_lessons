@@ -113,7 +113,7 @@ public class Chapter1OptionB_1_1 {
                     max = array[i];
                 }
                 for (int m = max; m > 1; m--) {
-                    if (array[i] / m == 1) {
+                    if (array[i] / m == 1 && array[i] > 0) {
                         //inlet data array[i]
                     }
                     for (int g = array[i] - 1; g > 2; g--) {
@@ -121,7 +121,6 @@ public class Chapter1OptionB_1_1 {
                             System.out.println("Out NOT prime number: " + array[i]);
                         }
                     }
-
                 }
             }
             //System.out.println("Prime num: " + array[i]);
