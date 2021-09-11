@@ -1,5 +1,6 @@
 package EpamLessonsBook;
 
+import java.util.Arrays;
 import java.util.Scanner;
 
 public class Chapter1OptionB_1_1 {
@@ -118,9 +119,8 @@ public class Chapter1OptionB_1_1 {
                     }
                     for (int g = array[i] - 1; g > 2; g--) {
                         if (array[i] % g == 0) {
-                            System.out.println("Out NOT prime number: " + array[i]);
+                            //   System.out.println("Out NOT prime number: " + array[i]);
                         }
-
                     }
                 }
             }
@@ -128,8 +128,15 @@ public class Chapter1OptionB_1_1 {
     }
 
     private void lowerToHigh() {
-
+        System.out.println();
+        System.out.print("Output lower to high numbers: ");
+        int k = array.length;
+        for (int i = 0; i < k; i++) {
+            Arrays.sort(array);
+            System.out.print(array[i] + ", ");
+        }
     }
+
 
     public static void main(String[] args) {
         Chapter1OptionB_1_1 numbers = new Chapter1OptionB_1_1();
@@ -142,5 +149,6 @@ public class Chapter1OptionB_1_1 {
         numbers.minNum();
         numbers.threeDigitNumbers();
         numbers.primeNumbers();
+        numbers.lowerToHigh();
     }
 }
