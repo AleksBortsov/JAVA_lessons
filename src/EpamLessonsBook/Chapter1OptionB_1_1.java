@@ -120,13 +120,16 @@ public class Chapter1OptionB_1_1 {
                         if (array[i] % g == 0) {
                             System.out.println("Out NOT prime number: " + array[i]);
                         }
+
                     }
                 }
             }
-            //System.out.println("Prime num: " + array[i]);
         }
     }
 
+    private void lowerToHigh() {
+
+    }
 
     public static void main(String[] args) {
         Chapter1OptionB_1_1 numbers = new Chapter1OptionB_1_1();
@@ -139,13 +142,5 @@ public class Chapter1OptionB_1_1 {
         numbers.minNum();
         numbers.threeDigitNumbers();
         numbers.primeNumbers();
-//        int a = 123 / 100;
-//        int b = 123 / 10 % 10;
-//        int c = 123 % 10;
-//        int d = 123;
-//        System.out.println(a + ", " + b + ", " + c);
-//        if (d / 123 == 1) {
-//            System.out.println(d);
-//        }
     }
 }
