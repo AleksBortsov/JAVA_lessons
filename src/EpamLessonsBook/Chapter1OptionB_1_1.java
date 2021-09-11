@@ -1,11 +1,12 @@
 package EpamLessonsBook;
 
 import java.util.Arrays;
+import java.util.Collections;
 import java.util.Scanner;
 
 public class Chapter1OptionB_1_1 {
     Scanner scanner = new Scanner(System.in);
-    private int array[] = new int[5];
+    private Integer array[] = new Integer[5];
 
     private void insertNumbers() {
         System.out.println("Insert " + array.length + " integer numbers: ");
@@ -137,6 +138,15 @@ public class Chapter1OptionB_1_1 {
         }
     }
 
+    private void highToLower() {
+        System.out.println();
+        System.out.print("Output high to lower numbers: ");
+        int k = array.length;
+        for (int i = 0; i < k; i++) {
+            Arrays.sort(array, Collections.reverseOrder());
+            System.out.print(array[i] + ", ");
+        }
+    }
 
     public static void main(String[] args) {
         Chapter1OptionB_1_1 numbers = new Chapter1OptionB_1_1();
@@ -150,5 +160,6 @@ public class Chapter1OptionB_1_1 {
         numbers.threeDigitNumbers();
         numbers.primeNumbers();
         numbers.lowerToHigh();
+        numbers.highToLower();
     }
 }
