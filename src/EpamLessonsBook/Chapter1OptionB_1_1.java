@@ -175,7 +175,18 @@ public class Chapter1OptionB_1_1 {
         System.out.print("Output palondrom Numbers: ");
         int k = array.length;
         for (int i = 0; i < k; i++) {
-            if (array[i] / 100 == array[i] % 10) {
+            if (array[i] / 100 == array[i] / 10 % 10) {
+                System.out.print(array[i] + ", ");
+            }
+        }
+    }
+
+    private void hulfSumBetween() {
+        System.out.println();
+        System.out.print("Output hulf Sum Between: ");
+        int k = array.length;
+        for (int i = k; i > k; i--) {
+            if ((array[i] + array[i - 2]) / 2 == array[i - 1]) {
                 System.out.print(array[i] + ", ");
             }
         }
@@ -196,5 +207,10 @@ public class Chapter1OptionB_1_1 {
         numbers.highToLower();
         numbers.sortLowerToHigh();
         numbers.palondromNumbers();
+        numbers.hulfSumBetween();
+//        int n = -123;
+//        System.out.println(n / 100);
+//        System.out.println(n % 10);
+//        System.out.println(n / 10 % 10);
     }
 }
