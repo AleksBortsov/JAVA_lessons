@@ -2,6 +2,7 @@ package EpamLessonsBook;
 
 import java.util.Arrays;
 import java.util.Collections;
+import java.util.Comparator;
 import java.util.Scanner;
 
 public class Chapter1OptionB_1_1 {
@@ -148,6 +149,23 @@ public class Chapter1OptionB_1_1 {
         }
     }
 
+    private void sortLowerToHigh() {
+        System.out.println();
+        System.out.print("Output high to lower numbers dublicates: ");
+        int k = array.length;
+        for (int i = 0; i < k; i++) {
+            if (array[i] / 100 == array[i] / 10 % 10
+                    & array[i] % 10 == array[i] / 100
+                    & array[i] / 10 % 10 == array[i] % 10) {
+                Arrays.sort(array, Comparator.reverseOrder());
+                System.out.print(array[i] + ", ");
+            } else {
+                Arrays.sort(array, Comparator.reverseOrder());
+                System.out.print(array[i] + ", ");
+            }
+        }
+    }
+
     public static void main(String[] args) {
         Chapter1OptionB_1_1 numbers = new Chapter1OptionB_1_1();
         numbers.insertNumbers();
@@ -161,5 +179,6 @@ public class Chapter1OptionB_1_1 {
         numbers.primeNumbers();
         numbers.lowerToHigh();
         numbers.highToLower();
+        numbers.sortLowerToHigh();
     }
 }
