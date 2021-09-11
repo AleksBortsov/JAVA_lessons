@@ -166,6 +166,21 @@ public class Chapter1OptionB_1_1 {
         }
     }
 
+    private void happyNumbers() {
+
+    }
+
+    private void palondromNumbers() {
+        System.out.println();
+        System.out.print("Output palondrom Numbers: ");
+        int k = array.length;
+        for (int i = 0; i < k; i++) {
+            if (array[i] / 100 == array[i] % 10) {
+                System.out.print(array[i] + ", ");
+            }
+        }
+    }
+
     public static void main(String[] args) {
         Chapter1OptionB_1_1 numbers = new Chapter1OptionB_1_1();
         numbers.insertNumbers();
@@ -180,5 +195,6 @@ public class Chapter1OptionB_1_1 {
         numbers.lowerToHigh();
         numbers.highToLower();
         numbers.sortLowerToHigh();
+        numbers.palondromNumbers();
     }
 }
