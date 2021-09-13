@@ -6,7 +6,7 @@ import java.util.Comparator;
 import java.util.Scanner;
 
 public class Chapter1OptionB_1_1 {
-    Scanner scanner = new Scanner(System.in);
+    private Scanner scanner = new Scanner(System.in);
     private Integer array[] = new Integer[5];
 
     private void insertNumbers() {
@@ -17,7 +17,6 @@ public class Chapter1OptionB_1_1 {
             array[i] = scanner.nextInt();
         }
         System.out.println("Length of array: " + array.length);
-
         for (Integer num : array
         ) {
             System.out.println(num + " ");
@@ -121,7 +120,7 @@ public class Chapter1OptionB_1_1 {
                     }
                     for (int g = array[i] - 1; g > 2; g--) {
                         if (array[i] % g == 0) {
-                            //   System.out.println("Out NOT prime number: " + array[i]);
+                            System.out.println(array[i]);
                         }
                     }
                 }
@@ -136,6 +135,7 @@ public class Chapter1OptionB_1_1 {
         for (int i = 0; i < k; i++) {
             Arrays.sort(array);
             System.out.print(array[i] + ", ");
+            int h = 0, rmd;
         }
     }
 
@@ -175,7 +175,7 @@ public class Chapter1OptionB_1_1 {
         System.out.print("Output palondrom Numbers: ");
         int k = array.length;
         for (int i = 0; i < k; i++) {
-            if (array[i] / 100 == array[i] / 10 % 10) {
+            if ((array[i] / 100) == (array[i] % 10)) {
                 System.out.print(array[i] + ", ");
             }
         }
@@ -192,6 +192,29 @@ public class Chapter1OptionB_1_1 {
         }
     }
 
+    private boolean isPrime(int num) {
+        if (num <= 1) {
+            return false;
+        }
+        for (int m = 2; m <= Math.sqrt(num); m++) {
+            if (num % m == 0) {
+                return false;
+            }
+        }
+
+        return true;
+    }
+
+    private void primeNumbers2() {
+        System.out.println();
+        System.out.print("Prime Numbers: ");
+        for (int i = 0; i < array.length; i++) {
+            if (isPrime(array[i])) {
+                System.out.print(array[i] + ", ");
+            }
+        }
+    }
+
     public static void main(String[] args) {
         Chapter1OptionB_1_1 numbers = new Chapter1OptionB_1_1();
         numbers.insertNumbers();
@@ -202,15 +225,18 @@ public class Chapter1OptionB_1_1 {
         numbers.maxNum();
         numbers.minNum();
         numbers.threeDigitNumbers();
-        numbers.primeNumbers();
         numbers.lowerToHigh();
         numbers.highToLower();
         numbers.sortLowerToHigh();
         numbers.palondromNumbers();
         numbers.hulfSumBetween();
-//        int n = -123;
+        // numbers.primeNumbers();
+        numbers.primeNumbers2();
+
+
+//        int n = -325;
 //        System.out.println(n / 100);
-//        System.out.println(n % 10);
-//        System.out.println(n / 10 % 10);
+//        System.out.println(n/10% 10);
+//        System.out.println(n%10);
     }
 }
