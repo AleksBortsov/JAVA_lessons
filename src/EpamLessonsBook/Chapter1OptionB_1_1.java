@@ -186,7 +186,7 @@ public class Chapter1OptionB_1_1 {
                     array[j] = null;
                     System.out.println("Number: " + array[i] + ", " + counter + " - pcs");
                 }
-            }break;
+            }
         }
     }
 
