@@ -165,12 +165,28 @@ public class Chapter1OptionB_1_1 {
 
     private void sortLowerToHigh2() {
         System.out.println();
-        System.out.print("Output high to lower numbers dublicates: ");
+        System.out.print("Output high to lower numbers dublicates2: ");
         int k = array.length;
         for (int i = 0; i < k; i++) {
             HashMap<Integer, Integer> hashMap = new HashMap<>();
             hashMap.put(k, array[i]);
             System.out.print(hashMap.get(k) + ", ");
+        }
+    }
+
+    private void sortLowerToHigh3() {
+        System.out.println();
+        System.out.println("Output high to lower numbers dublicates3: ");
+        int k = array.length;
+        for (int i = 0; i < k; i++) {
+            int counter = 1;
+            for (int j = i + 1; j < k; j++) {
+                if (array[i] == array[j]) {
+                    counter++;
+                    array[j] = null;
+                    System.out.println("Number: " + array[i] + ", " + counter + " - pcs");
+                }
+            }break;
         }
     }
 
@@ -238,7 +254,9 @@ public class Chapter1OptionB_1_1 {
         numbers.palondromNumbers();
         numbers.hulfSumBetween();
         numbers.primeNumbers2();
+        numbers.sortLowerToHigh();
         numbers.sortLowerToHigh2();
+        numbers.sortLowerToHigh3();
 
 
 //        int n = -325;
