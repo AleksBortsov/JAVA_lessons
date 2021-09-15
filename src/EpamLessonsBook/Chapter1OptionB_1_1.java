@@ -1,9 +1,6 @@
 package EpamLessonsBook;
 
-import java.util.Arrays;
-import java.util.Collections;
-import java.util.Comparator;
-import java.util.Scanner;
+import java.util.*;
 
 public class Chapter1OptionB_1_1 {
     private Scanner scanner = new Scanner(System.in);
@@ -166,6 +163,17 @@ public class Chapter1OptionB_1_1 {
         }
     }
 
+    private void sortLowerToHigh2() {
+        System.out.println();
+        System.out.print("Output high to lower numbers dublicates: ");
+        int k = array.length;
+        for (int i = 0; i < k; i++) {
+            HashMap<Integer, Integer> hashMap = new HashMap<>();
+            hashMap.put(k, array[i]);
+            System.out.print(hashMap.get(k) + ", ");
+        }
+    }
+
     private void happyNumbers() {
 
     }
@@ -201,7 +209,6 @@ public class Chapter1OptionB_1_1 {
                 return false;
             }
         }
-
         return true;
     }
 
@@ -230,8 +237,8 @@ public class Chapter1OptionB_1_1 {
         numbers.sortLowerToHigh();
         numbers.palondromNumbers();
         numbers.hulfSumBetween();
-        // numbers.primeNumbers();
         numbers.primeNumbers2();
+        numbers.sortLowerToHigh2();
 
 
 //        int n = -325;
