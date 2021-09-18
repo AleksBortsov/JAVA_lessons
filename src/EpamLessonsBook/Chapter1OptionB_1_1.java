@@ -4,7 +4,7 @@ import java.util.*;
 
 public class Chapter1OptionB_1_1 {
     private Scanner scanner = new Scanner(System.in);
-    private Integer array[] = new Integer[5];
+    private Integer array[] = new Integer[8];
 
     private void insertNumbers() {
         System.out.println("Insert " + array.length + " integer numbers: ");
@@ -178,16 +178,32 @@ public class Chapter1OptionB_1_1 {
         System.out.println();
         System.out.println("Output high to lower numbers dublicates3: ");
         int k = array.length;
+        int counter = 1;
         for (int i = 0; i < k; i++) {
-            int counter = 1;
             for (int j = i + 1; j < k; j++) {
+                Arrays.sort(array, Collections.reverseOrder());
                 if (array[i] == array[j]) {
                     counter++;
-                    array[j] = null;
-                    System.out.println("Number: " + array[i] + ", " + counter + " - pcs");
                 }
+                System.out.println("Number: " + array[j] + ". " + counter + " - pcs");
             }
         }
+    }
+
+    private void sortLowerToHigh4() {
+        System.out.println();
+        System.out.println("Output high to lower numbers dublicates4: ");
+        HashMap<Integer, Integer> hashMap = new HashMap<>();
+        int k = array.length;
+        for (int i = 0; i < k; i++) {
+
+            if (hashMap.containsKey(array[i])) {
+                hashMap.put(array[i], hashMap.get(array[i]) + 1);
+            } else {
+                hashMap.put(array[i], 1);
+            }
+        }
+        System.out.println(hashMap);
     }
 
     private void happyNumbers() {
@@ -254,9 +270,10 @@ public class Chapter1OptionB_1_1 {
         numbers.palondromNumbers();
         numbers.hulfSumBetween();
         numbers.primeNumbers2();
-        numbers.sortLowerToHigh();
-        numbers.sortLowerToHigh2();
-        numbers.sortLowerToHigh3();
+//        numbers.sortLowerToHigh();
+//        numbers.sortLowerToHigh2();
+//        numbers.sortLowerToHigh3();
+        numbers.sortLowerToHigh4();
 
 
 //        int n = -325;
