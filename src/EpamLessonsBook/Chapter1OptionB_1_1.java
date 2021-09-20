@@ -1,5 +1,7 @@
 package EpamLessonsBook;
 
+import jdk.nashorn.api.tree.Tree;
+
 import java.util.*;
 
 public class Chapter1OptionB_1_1 {
@@ -204,7 +206,11 @@ public class Chapter1OptionB_1_1 {
             }
         }
         System.out.println(hashMap);
+        hashMap.entrySet().stream().sorted(Map.Entry.<Integer,
+                Integer>comparingByValue()
+                .reversed()).forEach(System.out::println);
     }
+
 
     private void happyNumbers() {
 
@@ -274,7 +280,6 @@ public class Chapter1OptionB_1_1 {
 //        numbers.sortLowerToHigh2();
 //        numbers.sortLowerToHigh3();
         numbers.sortLowerToHigh4();
-
 
 //        int n = -325;
 //        System.out.println(n / 100);
