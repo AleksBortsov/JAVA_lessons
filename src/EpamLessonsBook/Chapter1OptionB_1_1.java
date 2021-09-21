@@ -1,7 +1,5 @@
 package EpamLessonsBook;
 
-import jdk.nashorn.api.tree.Tree;
-
 import java.util.*;
 
 public class Chapter1OptionB_1_1 {
@@ -197,6 +195,7 @@ public class Chapter1OptionB_1_1 {
         System.out.println("Output high to lower numbers dublicates4: ");
         HashMap<Integer, Integer> hashMap = new HashMap<>();
         int k = array.length;
+        Arrays.sort(array, Collections.reverseOrder());
         for (int i = 0; i < k; i++) {
 
             if (hashMap.containsKey(array[i])) {
@@ -205,12 +204,33 @@ public class Chapter1OptionB_1_1 {
                 hashMap.put(array[i], 1);
             }
         }
+
         System.out.println(hashMap);
-        hashMap.entrySet().stream().sorted(Map.Entry.<Integer,
-                Integer>comparingByValue()
-                .reversed()).forEach(System.out::println);
+
+
+//        hashMap.entrySet().stream().sorted(Map.Entry.<Integer, Integer>comparingByValue().reversed())
+//                .forEach(System.out::println);
+
+
     }
 
+    private void arrayTasks() {
+        int data[] = {1, -2, -3, 4, 5, 6, 18, 22, 17};
+        System.out.println(data.length);
+        System.out.println(data[data.length / 2 - 1]);
+        System.out.println(data[data.length / 2]);
+        Arrays.sort(data);
+        for (int i = 0; i < data.length; i++) {
+            System.out.println("Sorted data: " + data[i]);
+        }
+        if (data.length % 2 == 0) {
+            double medium = (double) (data[data.length / 2] + data[data.length / 2 - 1]) / 2;
+            System.out.println(medium);
+        } else {
+            int medium2 = data[data.length / 2];
+            System.out.println(medium2);
+        }
+    }
 
     private void happyNumbers() {
 
@@ -262,28 +282,29 @@ public class Chapter1OptionB_1_1 {
 
     public static void main(String[] args) {
         Chapter1OptionB_1_1 numbers = new Chapter1OptionB_1_1();
-        numbers.insertNumbers();
-        numbers.paresNumbers();
-        numbers.unParedNumbers();
-        numbers.numDevision3or9();
-        numbers.numDevision5and7();
-        numbers.maxNum();
-        numbers.minNum();
-        numbers.threeDigitNumbers();
-        numbers.lowerToHigh();
-        numbers.highToLower();
-        numbers.sortLowerToHigh();
-        numbers.palondromNumbers();
-        numbers.hulfSumBetween();
-        numbers.primeNumbers2();
+//        numbers.insertNumbers();
+//        numbers.paresNumbers();
+//        numbers.unParedNumbers();
+//        numbers.numDevision3or9();
+//        numbers.numDevision5and7();
+//        numbers.maxNum();
+//        numbers.minNum();
+//        numbers.threeDigitNumbers();
+//        numbers.lowerToHigh();
+//        numbers.highToLower();
+//        numbers.sortLowerToHigh();
+//        numbers.palondromNumbers();
+//        numbers.hulfSumBetween();
+//        numbers.primeNumbers2();
 //        numbers.sortLowerToHigh();
 //        numbers.sortLowerToHigh2();
 //        numbers.sortLowerToHigh3();
-        numbers.sortLowerToHigh4();
+//        numbers.sortLowerToHigh4();
 
 //        int n = -325;
 //        System.out.println(n / 100);
 //        System.out.println(n/10% 10);
 //        System.out.println(n%10);
+        numbers.arrayTasks();
     }
 }
