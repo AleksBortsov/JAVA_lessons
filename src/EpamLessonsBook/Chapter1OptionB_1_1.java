@@ -5,6 +5,8 @@ import java.util.*;
 public class Chapter1OptionB_1_1 {
     private Scanner scanner = new Scanner(System.in);
     private Integer array[] = new Integer[8];
+     private static int data[];
+    private static float medium;
 
     private void insertNumbers() {
         System.out.println("Insert " + array.length + " integer numbers: ");
@@ -20,7 +22,6 @@ public class Chapter1OptionB_1_1 {
         }
         scanner.close();
     }
-
 
     private void paresNumbers() {
         System.out.print("Out Pared numbers: ");
@@ -195,45 +196,37 @@ public class Chapter1OptionB_1_1 {
         System.out.println("Output high to lower numbers dublicates4: ");
         HashMap<Integer, Integer> hashMap = new HashMap<>();
         int k = array.length;
-        Arrays.sort(array, Collections.reverseOrder());
         for (int i = 0; i < k; i++) {
 
             if (hashMap.containsKey(array[i])) {
                 hashMap.put(array[i], hashMap.get(array[i]) + 1);
             } else {
                 hashMap.put(array[i], 1);
+
             }
         }
 
-        System.out.println(hashMap);
-
-
-//        hashMap.entrySet().stream().sorted(Map.Entry.<Integer, Integer>comparingByValue().reversed())
-//                .forEach(System.out::println);
-
-
+        hashMap.entrySet().stream().sorted(Map.Entry.<Integer, Integer>comparingByValue().reversed())
+                .forEach(System.out::println);
     }
 
-    private void arrayTasks() {
-        int data[] = {1, -2, -3, 4, 5, 6, 18, 22, 17};
-        System.out.println(data.length);
-        System.out.println(data[data.length / 2 - 1]);
-        System.out.println(data[data.length / 2]);
-        Arrays.sort(data);
-        for (int i = 0; i < data.length; i++) {
-            System.out.println("Sorted data: " + data[i]);
-        }
-        if (data.length % 2 == 0) {
-            double medium = (double) (data[data.length / 2] + data[data.length / 2 - 1]) / 2;
-            System.out.println(medium);
-        } else {
-            int medium2 = data[data.length / 2];
-            System.out.println(medium2);
-        }
+    private boolean isHappy(int num) {
+        if (num == 1)
+            return true;
+        for (int j : array)
+            if (num == j)
+                return false;
+        int nextNum = array[num];
+
+        return isHappy(nextNum);
     }
 
     private void happyNumbers() {
-
+        System.out.println("Happy numbers: ");
+        for (int i = 0; i < array.length; i++) {
+            if (isHappy(array[i]))
+                System.out.println(array[i] + ", ");
+        }
     }
 
     private void palondromNumbers() {
@@ -281,7 +274,7 @@ public class Chapter1OptionB_1_1 {
     }
 
     public static void main(String[] args) {
-        Chapter1OptionB_1_1 numbers = new Chapter1OptionB_1_1();
+        //Chapter1OptionB_1_1 numbers = new Chapter1OptionB_1_1();
 //        numbers.insertNumbers();
 //        numbers.paresNumbers();
 //        numbers.unParedNumbers();
@@ -300,11 +293,12 @@ public class Chapter1OptionB_1_1 {
 //        numbers.sortLowerToHigh2();
 //        numbers.sortLowerToHigh3();
 //        numbers.sortLowerToHigh4();
-
+//        numbers.happyNumbers();
+//
 //        int n = -325;
 //        System.out.println(n / 100);
 //        System.out.println(n/10% 10);
 //        System.out.println(n%10);
-        numbers.arrayTasks();
+//        numbers.arrayTasks();
     }
 }
