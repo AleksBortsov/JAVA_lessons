@@ -5,8 +5,6 @@ import java.util.*;
 public class Chapter1OptionB_1_1 {
     private Scanner scanner = new Scanner(System.in);
     private Integer array[] = new Integer[8];
-     private static int data[];
-    private static float medium;
 
     private void insertNumbers() {
         System.out.println("Insert " + array.length + " integer numbers: ");
@@ -217,7 +215,6 @@ public class Chapter1OptionB_1_1 {
             if (num == j)
                 return false;
         int nextNum = array[num];
-
         return isHappy(nextNum);
     }
 
@@ -274,8 +271,8 @@ public class Chapter1OptionB_1_1 {
     }
 
     public static void main(String[] args) {
-        //Chapter1OptionB_1_1 numbers = new Chapter1OptionB_1_1();
-//        numbers.insertNumbers();
+        Chapter1OptionB_1_1 numbers = new Chapter1OptionB_1_1();
+        numbers.insertNumbers();
 //        numbers.paresNumbers();
 //        numbers.unParedNumbers();
 //        numbers.numDevision3or9();
@@ -293,7 +290,7 @@ public class Chapter1OptionB_1_1 {
 //        numbers.sortLowerToHigh2();
 //        numbers.sortLowerToHigh3();
 //        numbers.sortLowerToHigh4();
-//        numbers.happyNumbers();
+        numbers.happyNumbers();
 //
 //        int n = -325;
 //        System.out.println(n / 100);
