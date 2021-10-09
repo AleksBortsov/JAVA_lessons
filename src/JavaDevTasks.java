@@ -1,6 +1,5 @@
 import java.util.Arrays;
 import java.util.HashSet;
-import java.util.Iterator;
 import java.util.Set;
 
 public class JavaDevTasks {
@@ -41,20 +40,28 @@ public class JavaDevTasks {
         return Math.min(max, Math.max(min, value));
     }
 
-    private static int fibanachi(int n) {
-        for (int i = 0; i < 100; i++) {
-
+    private static int fibonaci(int n) {
+        if (n == 1) {
+            int k = 1;
+            System.out.println("n= " + n + ", fibonaci= " + k);
+        } if (n == 2) {
+            int k = 2;
+            System.out.println("n= " + n + ", fibonaci= " + k);
+        } if (n > 2) {
+            int k = fibonaci(n - 1) + fibonaci(n - 2);
+            System.out.println("n= " + n + ", fibonaci= " + k);
+            return k;
         }
-        int k = 2;
-        return fibanachi(n);
+        return n;
     }
+
 
     public static void main(String[] args) {
         int data[] = {-7, -6, -5, -4, -3, -2, -2};
-        System.out.println("MedianaCalculation: " + medianaCalculation(data));
-        System.out.println("Dublicate in array: " + dublicate(data));
-        System.out.println("Dublicate in Set: " + dublicateInSet(data));
-        System.out.println("in Range: " + inRange(5, 7, 6));
-        System.out.println(fibanachi(1));
+//        System.out.println("MedianaCalculation: " + medianaCalculation(data));
+//        System.out.println("Dublicate in array: " + dublicate(data));
+//        System.out.println("Dublicate in Set: " + dublicateInSet(data));
+//        System.out.println("in Range: " + inRange(5, 7, 6));
+        fibonaci(10);
     }
 }
