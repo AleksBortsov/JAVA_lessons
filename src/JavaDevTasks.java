@@ -41,13 +41,9 @@ public class JavaDevTasks {
     }
 
     private static int fibonaci(int n) {
-        if (n == 1) {
-            int k = 1;
-            System.out.println("n= " + n + ", fibonaci= " + k);
-        } if (n == 2) {
-            int k = 2;
-            System.out.println("n= " + n + ", fibonaci= " + k);
-        } if (n > 2) {
+        if (n < 3) {
+            System.out.println("n= " + n + ", fibonaci= " + n);
+        } else if (n > 2) {
             int k = fibonaci(n - 1) + fibonaci(n - 2);
             System.out.println("n= " + n + ", fibonaci= " + k);
             return k;
