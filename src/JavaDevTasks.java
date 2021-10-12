@@ -1,8 +1,9 @@
-import java.util.Arrays;
-import java.util.HashSet;
-import java.util.Set;
+import java.nio.charset.IllegalCharsetNameException;
+import java.util.*;
 
 public class JavaDevTasks {
+    private static Map<Integer, Integer> map = new TreeMap<>();
+    private static Set<Integer> setFibo = new TreeSet<>();
 
     private static float medianaCalculation(int[] data) {
         float medium;
@@ -41,16 +42,71 @@ public class JavaDevTasks {
     }
 
     private static int fibonaci(int n) {
+        Set<Integer> fibonacciSet = new TreeSet<>();
         if (n < 3) {
             System.out.println("n= " + n + ", fibonaci= " + n);
         } else if (n > 2) {
             int k = fibonaci(n - 1) + fibonaci(n - 2);
-            System.out.println("n= " + n + ", fibonaci= " + k);
+//            System.out.println("n= " + n + ", fibonaci= " + k);
+            fibonacciSet.add(k);
+            for (Integer set : fibonacciSet
+            ) {
+                System.out.println("n= " + n + ", fibonaci= " + set);
+            }
             return k;
         }
         return n;
     }
 
+    private static int fibo(int n) {
+        if (n > 2) {
+            if (map.containsKey(n - 1)) {
+                map.get(n);
+                if (map.containsKey(n - 2)) {
+                    map.get(n);
+                }
+                int k = map.get(n - 1) + map.get(n - 2);
+                return k;
+            } else {
+                int k = fibo(n - 1) + fibo(n - 2);
+                map.put(n, k);
+                System.out.println("n= " + n + ", fibonaci= " + map.get(n));
+                return k;
+            }
+        } else {
+            if (!map.containsKey(n)) {
+                map.put(n, n);
+                System.out.println("n= " + n + ", fibonaci= " + map.get(n));
+            }
+        }
+        return n;
+    }
+
+    private static int fibonacci_rev3(int n) {
+        if (n > 2) {
+            if (!map.containsKey(n - 1)) {
+                int k = fibonacci_rev3(n - 1);
+                map.put(n - 1, k);
+                return n;
+            }
+
+            if (!map.containsKey(n - 2)) {
+                int m = fibonacci_rev3(n - 2);
+                map.put(n - 2, m);
+                return m;
+            }
+
+            System.out.println("n= " + n + ", fibonaci= " + map.get(n - 2) + map.get(n - 1));
+
+
+        } else {
+            map.put(n, n);
+            map.put(n + 1, n + 1);
+            System.out.println("n= " + n + ", fibonaci= " + map.get(n));
+            System.out.println("n= " + (n + 1) + ", fibonaci= " + map.get(n + 1));
+        }
+        return n;
+    }
 
     public static void main(String[] args) {
         int data[] = {-7, -6, -5, -4, -3, -2, -2};
@@ -58,6 +114,9 @@ public class JavaDevTasks {
 //        System.out.println("Dublicate in array: " + dublicate(data));
 //        System.out.println("Dublicate in Set: " + dublicateInSet(data));
 //        System.out.println("in Range: " + inRange(5, 7, 6));
-        fibonaci(10);
+//        fibonaci(6);
+        fibo(10);
+
+//        fibonacci_rev3(6);
     }
 }
