@@ -113,17 +113,39 @@ public class JavaDevTasks {
                     int k = a % 10;
                     a = a / 10;
                     arrayList.add(count, k);
-                    System.out.println("number of data[i]: " + data[i] + ", key: " + count + ", number:" + k);
+                    System.out.println("number of data[i]: " + data[i] + ", key: " + count + ", number:" + arrayList.get(count));
                     count++;
+                    System.out.println(arrayList.size());
                     if (a == 0) {
                         count--;
-//                        if ()
+                        System.out.println(arrayList.size());
+//                        if () --> нужно сравнить первый элемeнт и последний,
+//                        второй и предпоследний и т.д. Не знаю как, подскажи???
                     }
                 }
             }
         }
     }
 
+    private static boolean isPalindrom(int num) {
+        if (num > 10) {
+            int a = num;
+            while (a > 0) {
+                int k = a % 10;
+                a = a / 10;
+                arrayList.add(k);
+
+                if (a == 0) {
+                    for (int m = 0; m < arrayList.size() / 2; m++) {
+                        if (arrayList.get(m) != arrayList.get(arrayList.size() - 1 - m)) {
+                            return false;
+                        }
+                    }
+                }
+            }
+        }
+        return true;
+    }
 
     public static void main(String[] args) {
         int data[] = {19999, 2, 3456, 78, 910, 1112, 1314};
@@ -133,6 +155,6 @@ public class JavaDevTasks {
 //        System.out.println("in Range: " + inRange(5, 7, 6));
 //        fibonaci(10);
 //        checkHappyNumber(data);
-        polindrom2(data);
+        System.out.println(isPalindrom(1223221));
     }
 }
