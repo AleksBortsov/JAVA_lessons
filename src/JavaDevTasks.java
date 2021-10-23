@@ -2,6 +2,7 @@ import java.util.*;
 
 public class JavaDevTasks {
     private static Map<Integer, Integer> map = new TreeMap<>();
+    private static List<Integer> arrayList = new ArrayList();
 
     private static float medianaCalculation(int[] data) {
         float medium;
@@ -57,12 +58,8 @@ public class JavaDevTasks {
         return n;
     }
 
-    private static void happyNumbersFromArray(int[] data) {
-
-    }
-
     private static int isHappyNumber(int number) {
-        int rem = 0, sum = 0;
+        int rem, sum = 0;
 // calculate the sum of squares of digits
         while (number > 0) {
             rem = number % 10;
@@ -86,15 +83,56 @@ public class JavaDevTasks {
         }
     }
 
+    private static void polindrom(int[] data) {
+        for (int i = 0; i < data.length; i++) {
+            if (data[i] > 10) {
+                int l = 0;
+                int a = data[i];
+                int count = 0;
+                while (a > 0) {
+                    int k = a % 10;
+                    a = a / 10;
+                    map.put(count, k);
+                    System.out.println("number of data[i]: " + data[i] + ", key: " + count + ", number:" + map.get(count));
+                    count = count + 1;
+                    if (a == 0) {
+                        l = map.size();
+                        System.out.println("lenght of map: " + l + ", a equal 0");
+                    }
+                }
+            }
+        }
+    }
+
+    private static void polindrom2(int[] data) {
+        for (int i = 0; i < data.length; i++) {
+            if (data[i] > 10) {
+                int a = data[i];
+                int count = 0;
+                while (a > 0) {
+                    int k = a % 10;
+                    a = a / 10;
+                    arrayList.add(count, k);
+                    System.out.println("number of data[i]: " + data[i] + ", key: " + count + ", number:" + k);
+                    count++;
+                    if (a == 0) {
+                        count--;
+//                        if ()
+                    }
+                }
+            }
+        }
+    }
+
 
     public static void main(String[] args) {
-        int data[] = {1, 2, 82, 13, 14, 15, 23};
+        int data[] = {19999, 2, 3456, 78, 910, 1112, 1314};
 //        System.out.println("MedianaCalculation: " + medianaCalculation(data));
 //        System.out.println("Dublicate in array: " + dublicate(data));
 //        System.out.println("Dublicate in Set: " + dublicateInSet(data));
 //        System.out.println("in Range: " + inRange(5, 7, 6));
 //        fibonaci(10);
-        checkHappyNumber(data);
-
+//        checkHappyNumber(data);
+        polindrom2(data);
     }
 }
