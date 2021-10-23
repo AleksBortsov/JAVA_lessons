@@ -127,14 +127,14 @@ public class JavaDevTasks {
         }
     }
 
-    private static boolean isPalindrom(int num) {
+    private static boolean isPalindrome(int num) {
+        arrayList.clear();
         if (num > 10) {
             int a = num;
             while (a > 0) {
                 int k = a % 10;
                 a = a / 10;
                 arrayList.add(k);
-
                 if (a == 0) {
                     for (int m = 0; m < arrayList.size() / 2; m++) {
                         if (arrayList.get(m) != arrayList.get(arrayList.size() - 1 - m)) {
@@ -147,14 +147,25 @@ public class JavaDevTasks {
         return true;
     }
 
+    private static void checkIsPalondrome(int[] data) {
+        for (int i = 0; i < data.length; i++) {
+            if (data[i] > 10) {
+                if (isPalindrome(data[i])) {
+                    System.out.println(data[i]);
+                }
+            }
+        }
+    }
+
     public static void main(String[] args) {
-        int data[] = {19999, 2, 3456, 78, 910, 1112, 1314};
+        int data[] = {19999, 22, 3456, 78, 919, 1111, 1331};
 //        System.out.println("MedianaCalculation: " + medianaCalculation(data));
 //        System.out.println("Dublicate in array: " + dublicate(data));
 //        System.out.println("Dublicate in Set: " + dublicateInSet(data));
 //        System.out.println("in Range: " + inRange(5, 7, 6));
 //        fibonaci(10);
 //        checkHappyNumber(data);
-        System.out.println(isPalindrom(1223221));
+//        System.out.println(isPalindrome(1111));
+        checkIsPalondrome(data);
     }
 }
