@@ -83,49 +83,49 @@ public class JavaDevTasks {
         }
     }
 
-    private static void polindrom(int[] data) {
-        for (int i = 0; i < data.length; i++) {
-            if (data[i] > 10) {
-                int l = 0;
-                int a = data[i];
-                int count = 0;
-                while (a > 0) {
-                    int k = a % 10;
-                    a = a / 10;
-                    map.put(count, k);
-                    System.out.println("number of data[i]: " + data[i] + ", key: " + count + ", number:" + map.get(count));
-                    count = count + 1;
-                    if (a == 0) {
-                        l = map.size();
-                        System.out.println("lenght of map: " + l + ", a equal 0");
-                    }
-                }
-            }
-        }
-    }
-
-    private static void polindrom2(int[] data) {
-        for (int i = 0; i < data.length; i++) {
-            if (data[i] > 10) {
-                int a = data[i];
-                int count = 0;
-                while (a > 0) {
-                    int k = a % 10;
-                    a = a / 10;
-                    arrayList.add(count, k);
-                    System.out.println("number of data[i]: " + data[i] + ", key: " + count + ", number:" + arrayList.get(count));
-                    count++;
-                    System.out.println(arrayList.size());
-                    if (a == 0) {
-                        count--;
-                        System.out.println(arrayList.size());
-//                        if () --> нужно сравнить первый элемeнт и последний,
-//                        второй и предпоследний и т.д. Не знаю как, подскажи???
-                    }
-                }
-            }
-        }
-    }
+//    private static void polindrom(int[] data) {
+//        for (int i = 0; i < data.length; i++) {
+//            if (data[i] > 10) {
+//                int l = 0;
+//                int a = data[i];
+//                int count = 0;
+//                while (a > 0) {
+//                    int k = a % 10;
+//                    a = a / 10;
+//                    map.put(count, k);
+//                    System.out.println("number of data[i]: " + data[i] + ", key: " + count + ", number:" + map.get(count));
+//                    count = count + 1;
+//                    if (a == 0) {
+//                        l = map.size();
+//                        System.out.println("lenght of map: " + l + ", a equal 0");
+//                    }
+//                }
+//            }
+//        }
+//    }
+//
+//    private static void polindrom2(int[] data) {
+//        for (int i = 0; i < data.length; i++) {
+//            if (data[i] > 10) {
+//                int a = data[i];
+//                int count = 0;
+//                while (a > 0) {
+//                    int k = a % 10;
+//                    a = a / 10;
+//                    arrayList.add(count, k);
+//                    System.out.println("number of data[i]: " + data[i] + ", key: " + count + ", number:" + arrayList.get(count));
+//                    count++;
+//                    System.out.println(arrayList.size());
+//                    if (a == 0) {
+//                        count--;
+//                        System.out.println(arrayList.size());
+////                        if () --> нужно сравнить первый элемeнт и последний,
+////                        второй и предпоследний и т.д. Не знаю как, подскажи???
+//                    }
+//                }
+//            }
+//        }
+//    }
 
     private static boolean isPalindrome(int num) {
         arrayList.clear();
@@ -157,8 +157,17 @@ public class JavaDevTasks {
         }
     }
 
+    private static void hulfSumBetween(int data[]) {
+        System.out.println("Output hulf Sum Between: ");
+        for (int i = 0; i < data.length-1; i++) {
+            int middle = (data[i] + data[i + 1]) / 2;
+            System.out.println(middle);
+        }
+    }
+
+
     public static void main(String[] args) {
-        int data[] = {19999, 22, 3456, 78, 919, 1111, 1331};
+        int data[] = {1, 2, 3, 4, 5, 6, 7};
 //        System.out.println("MedianaCalculation: " + medianaCalculation(data));
 //        System.out.println("Dublicate in array: " + dublicate(data));
 //        System.out.println("Dublicate in Set: " + dublicateInSet(data));
@@ -166,6 +175,7 @@ public class JavaDevTasks {
 //        fibonaci(10);
 //        checkHappyNumber(data);
 //        System.out.println(isPalindrome(1111));
-        checkIsPalondrome(data);
+//        checkIsPalondrome(data);
+         hulfSumBetween(data);
     }
 }
